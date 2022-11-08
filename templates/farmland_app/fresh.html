@@ -1,0 +1,24 @@
+{% load static %}
+
+
+<section class="ftco-section ftco-services ftco-no-pt"> 
+	<div class="container">
+		<div class="row">
+			{% for data in vegitable %}
+			<div class="col-md-3 d-flex align-self-stretch ftco-animate">
+				<div class="services">
+					<div class="p-4">
+						<div class="media-body">
+							<h3 class="heading mb-3">{{data.headding}}</h3>
+							<p>{{data.description}}</p>
+						</div>
+					</div>
+					<div class="img" style="background-image: url({{ data.image.url }});">
+						<a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+					</div>
+				</div> 	    
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section> 

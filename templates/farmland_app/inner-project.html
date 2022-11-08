@@ -1,0 +1,61 @@
+{% load static %}
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_3.jpg' %});">
+  <div class="overlay"></div>
+  <div class="overlay-2"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+       <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Projects <i class="fa fa-chevron-right"></i></span></p>
+       <h1 class="mb-0 bread">Projects</h1>
+     </div>
+   </div>
+ </div>
+</section>
+
+<section class="ftco-section">
+  
+    <div class="container">
+     <div class="row">
+      {% for data in project %}
+      <div class="col-md-3 ftco-animate">
+        <div class="project-wrap img d-flex align-items-end" style="background-image: url({{data.image.url}});">
+         <div class="text">
+           <h3><a href="portfolio-single.html">{{data.headding}}</a></h3>
+           <a href="portfolio-single.html" class="icon d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+         </div>
+        </div>
+      </div>
+      {% endfor %}
+     </div>>
+  
+   
+   <div class="row mt-5">
+     <div class="col text-center">
+       <div class="block-27">
+         <ul>
+           <li><a href="#">&lt;</a></li>
+           <li class="active"><span>1</span></li>
+           <li><a href="/project/?page=2">2</a></li>
+           <li><a href="/project/?page=3">3</a></li>
+           <li><a href="/project/?page=4">4</a></li>
+           <li><a href="/project/?page=5">5</a></li>
+           <li><a href="#">&gt;</a></li>
+         </ul>
+       </div>
+     </div>
+   </div>
+   </div>
+   </section>
+
+
+
+   <!-- <span class="comment-detail-main-area" >
+    {% if page_obj.has_previous %}
+      <a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous</a>
+    {% endif %}
+    <span  class="page-link"  >{{page_obj.number}}</span>
+    {% if page_obj.has_next %}
+    <a class="page-link"  href="?page={{page_obj.next_page_number}}">Next</a>
+  {% endif %}
+</span> -->
